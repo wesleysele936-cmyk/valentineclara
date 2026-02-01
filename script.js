@@ -4,7 +4,7 @@ const buttons = document.getElementById("buttons");
 let noCount = 0;
 
 function handleYes() {
-  text.textContent = "YES works 💖";
+  text.textContent = "YES works 💖 (next step coming)";
 }
 
 function handleNo() {
@@ -26,6 +26,7 @@ function handleNo() {
     `;
   }
 }
+
 
 }
 
