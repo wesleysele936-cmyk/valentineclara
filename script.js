@@ -6,28 +6,32 @@ let slide = 0;
 
 const sweetSlides = [
   "Before we continue… 💕",
-  "I just want you to know how special you are to me 🥺",
-  "You make my days brighter just by being you ✨",
-  "I can’t imagine Valentine’s Day — or life — without you ❤️"
+  "I just want you to know how much you mean to me 🥺",
+  "You make my life brighter just by being in it ✨",
+  "And I want to spend Valentine’s Day — and life — with you ❤️"
 ];
 
 function handleNo() {
   noCount++;
 
-  const messages = [
-    "Nope 😅 wrong answer",
-    "Hmm… try again 💕",
-    "That’s not it 🤭",
-    "Be serious Clara 😌",
-    "Obviously."
+  const noMessages = [
+    "Clara 💖💘<br>Oops that’s the wrong answer.",
+    "Clara 💖💘<br>Be serious chipchip.",
+    "Clara 💖💘<br>Mfana you’ll be your own Valentine 😒",
+    "Clara 💖💘<br>Awe you can stop now."
   ];
 
-  text.textContent = messages[Math.min(noCount - 1, messages.length - 1)];
-
-  if (noCount >= 5) {
+  if (noCount <= 4) {
+    text.innerHTML = noMessages[noCount - 1];
+  } else {
+    // Move NO button + change text to Obviously
     buttons.innerHTML = `
       <button class="yes" onclick="startSweetSlides()">Yes</button>
-      <button class="no" onclick="startSweetSlides()">Obviously</button>
+      <button class="no" onclick="startSweetSlides()" style="
+        transform: translate(${Math.random() * 120 - 60}px, ${Math.random() * 80 - 40}px);
+      ">
+        Obviously
+      </button>
     `;
   }
 }
@@ -42,7 +46,7 @@ function startSweetSlides() {
 }
 
 function showSweetSlide() {
-  text.textContent = sweetSlides[slide];
+  text.innerHTML = `Clara 💖💘<br>${sweetSlides[slide]}`;
 
   buttons.innerHTML = `
     <button class="yes" onclick="nextSlide()">Continue</button>
@@ -61,24 +65,23 @@ function nextSlide() {
 
 function showFinalMessage() {
   text.innerHTML = `
-    <p>
-      Clara,<br><br>
-      I love you more than words can explain.<br>
-      I want to spend Valentine’s Day with you,
-      and honestly… every day after that too.<br><br>
-      You’re my favorite person,
-      my best friend,
-      and my forever Valentine ❤️
-    </p>
-    <p style="font-size:14px; opacity:0.6;">
+    Clara 💖💘<br><br>
+    I love you more than words can explain.<br>
+    I want to spend Valentine’s Day with you,
+    and honestly… every day after that too.<br><br>
+    You’re my favorite person,
+    my best friend,
+    and my forever Valentine ❤️<br><br>
+    <span style="font-size:14px; opacity:0.6;">
       February 14 — always us ❤️
-    </p>
+    </span>
   `;
 
   buttons.innerHTML = `
-    <button class="yes">
+    <button class="yes sparkle">
       Yes chichi I’ll be your Valentine ❤️
     </button>
   `;
 }
+
 
