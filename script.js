@@ -66,6 +66,20 @@ function nextSlide() {
 function showFinalMessage() {
   text.innerHTML = `
     Clara 💖💘<br><br>
+    YAYYYY 🥹💖<br><br>
+    <strong>
+      Yes chichi I’ll be your Valentine ❤️
+    </strong>
+  `;
+
+  buttons.innerHTML = `
+    <button class="yes" onclick="showPoem()">Continue</button>
+  `;
+}
+
+function showPoem() {
+  text.innerHTML = `
+    Clara 💖💘<br><br>
     I love you more than words can explain.<br>
     I want to spend Valentine’s Day with you,
     and honestly… every day after that too.<br><br>
@@ -76,6 +90,10 @@ function showFinalMessage() {
       February 14 — always us ❤️
     </span>
   `;
+
+  buttons.innerHTML = ``;
+}
+
 
   buttons.innerHTML = `
     <button class="yes sparkle">
