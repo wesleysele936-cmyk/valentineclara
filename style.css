@@ -1,11 +1,12 @@
 body {
   margin: 0;
   height: 100vh;
-  background: linear-gradient(135deg, #ffb6c1, #ff69b4);
+  background: linear-gradient(135deg, #ffe4ec, #ffc1d9);
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Poppins', sans-serif;
+  overflow: hidden;
 }
 
 .container {
