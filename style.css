@@ -41,3 +41,15 @@ button {
   color: #ff4d6d;
   border: 2px solid #ff4d6d;
 }
+.name {
+  font-family: 'Great Vibes', cursive;
+  font-size: 40px;
+  display: inline-block;
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
