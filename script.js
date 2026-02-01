@@ -2,6 +2,14 @@ const text = document.getElementById("text");
 const buttons = document.getElementById("buttons");
 
 let noCount = 0;
+let slide = 0;
+
+const sweetSlides = [
+  "Before we continue… 💕",
+  "I just want you to know how special you are to me 🥺",
+  "You make my days brighter just by being you ✨",
+  "I can’t imagine Valentine’s Day — or life — without you ❤️"
+];
 
 function handleNo() {
   noCount++;
@@ -18,13 +26,40 @@ function handleNo() {
 
   if (noCount >= 5) {
     buttons.innerHTML = `
-      <button class="yes" onclick="handleYes()">Yes</button>
-      <button class="no" onclick="handleYes()">Obviously</button>
+      <button class="yes" onclick="startSweetSlides()">Yes</button>
+      <button class="no" onclick="startSweetSlides()">Obviously</button>
     `;
   }
 }
 
 function handleYes() {
+  startSweetSlides();
+}
+
+function startSweetSlides() {
+  slide = 0;
+  showSweetSlide();
+}
+
+function showSweetSlide() {
+  text.textContent = sweetSlides[slide];
+
+  buttons.innerHTML = `
+    <button class="yes" onclick="nextSlide()">Continue</button>
+  `;
+}
+
+function nextSlide() {
+  slide++;
+
+  if (slide < sweetSlides.length) {
+    showSweetSlide();
+  } else {
+    showFinalMessage();
+  }
+}
+
+function showFinalMessage() {
   text.innerHTML = `
     <p>
       Clara,<br><br>
@@ -46,3 +81,4 @@ function handleYes() {
     </button>
   `;
 }
+
